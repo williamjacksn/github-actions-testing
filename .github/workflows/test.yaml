@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+
+env:
+  foo: ${GITHUB_REPOSITORY@L}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Print foo
+        run: |
+          echo "${{ env.foo }}"
